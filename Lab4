@@ -1,0 +1,62 @@
+
+public class cau2 {
+    private double radius;
+    private String color;
+
+
+    public cau2(double radius, String color){
+        this.radius = radius;
+        this.color = color;
+    }
+
+    // Phương thức getter và setter cho biến radius
+    public double getRadius(){
+        return radius;   
+    }
+
+    public void setRadius(double radius){
+        this.radius = radius;
+    }
+
+
+    public String getColor(){
+        return color;
+    }
+
+    public void setColor(String color){
+        this.color = color;
+    }
+
+
+    public double getArea(){
+        return this.radius * this.radius * Math.PI;  
+    }
+
+
+    public String toString(){
+        return "Circle{" + "radius=" + radius + ", color='" + color + '\'' +'}';
+    }
+}
+
+public class Cylinder extends cau2 {
+    private double height;
+
+    public Cylinder(double radius, String color, double height){
+
+        super(radius, color);
+        this.height = height;
+    }
+
+    public double getHeight(){
+        return height;
+    }
+
+    public void setHeight(double height){
+        this.height = height;
+    }
+
+
+    public double getVolume(){
+        return super.getArea() * this.height;
+    }
+}
